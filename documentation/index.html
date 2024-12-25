@@ -1,0 +1,138 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<head lang="en">
+	<meta http-equiv="content-type" content="text/html;charset=utf-8">
+	<title>Houzi Real Estate App Documentation</title>
+	<!-- Framework CSS -->
+	<link rel="stylesheet" href="assets/blueprint-css/screen.css" type="text/css" media="screen, projection">
+	<link rel="stylesheet" href="assets/blueprint-css/print.css" type="text/css" media="print">
+	<!--[if lt IE 8]><link rel="stylesheet" href="assets/blueprint-css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+	<link rel="stylesheet" href="assets/blueprint-css/plugins/fancy-type/screen.css" type="text/css" media="screen, projection">
+	<style type="text/css" media="screen">
+		p, table, hr, .box { margin-bottom:25px; }
+		.box p { margin-bottom:10px; }
+	</style>
+</head>
+
+
+<body>
+	<div class="container">
+	
+		<h3 class="center alt">Quick setup documentation v1.0</h3>
+		
+		<hr>
+		
+		<h1 class="center">Houzi - real estate app</h1>
+		
+		<div class="borderTop">
+			<div class="span-6 colborder info prepend-1">
+				<p class="prepend-top">
+					<strong>
+					Created: 09/23/2022<br>
+					By: Adil Soomro<br>
+					Email: <a href="mailto:houziapp@gmail.com">houziapp@gmail.com</a>
+					</strong>
+				</p>
+			</div><!-- end div .span-6 -->		
+	
+			<div class="span-12 last">
+				<p class="prepend-top append-0">Thank you for purchasing Houzi. This is a quick setup guide. We have detailed documentation available at <a href="https://houzi-docs.booleanbites.com/">Houzi-Docs</a>.</p>
+			</div>
+		</div><!-- end div .borderTop -->
+		
+		<hr>
+		
+		<h2 id="toc" class="alt">Table of Contents</h2>
+		<ol class="alpha">
+			<li><a href="#setup-website">Setup Website</a></li>
+			<li><a href="#houzi-rest-api-plugin">Install Houzi Rest Api Plugin</a></li>
+			<li><a href="#flutter-setup">Flutter Setup</a></li>
+			<li><a href="#connect-app-to-website">Connect App to your website</a></li>
+			<li><a href="#compile-app">Compile and Run App</a></li>
+			<li><a href="#detailed-documentation">Detailed Documentation</a></li>
+		</ol>
+		
+		<hr>
+		
+		<h3 id="setup-website"><strong>Setup Website</strong></h3>
+		<p>This app works with Houzez Wordpress theme. You need to install Houzez on your wordpress website.
+		Download and Setup Houzez from here: <a href="https://themeforest.net/item/houzez-real-estate-wordpress-theme/15752549">Houzez Real Estate Wordpress Theme</a>.
+		<br/>
+		If you already have Houzez setup and installed, you can continue to next configurations.
+		</p>
+
+		<hr>
+		
+		<h3 id="houzi-rest-api-plugin"><strong>Install Houzi Rest Api Plugin</strong></h3>
+		<p>Houzi Rest Api is a wordpress plugin that extends the default rest api functionality of Houzez theme to mobile apps. You can download here: <a href="https://github.com/AdilSoomro/houzi-rest-api/releases">Houzi Rest Api</a>. Install and activate.
+		</p>
+
+		<hr>
+
+		<h3 id="flutter-setup"><strong>Flutter Setup</strong></h3>
+		<p>This app is a Flutter application, which means it requires Flutter SDK setup on your platform. Download the Flutter SDK version 3.0.5 for your platform from below URL:
+			<br/>
+			<a href="https://storage.googleapis.com/flutter_infra_release/releases/stable/windows/flutter_windows_3.3.7-stable.zip">Flutter for Windows</a>
+			<br/>
+			<a href="https://storage.googleapis.com/flutter_infra_release/releases/stable/macos/flutter_macos_3.3.7-stable.zip">Flutter for MacOS</a>
+			<br/>
+			Go to <a href="https://docs.flutter.dev/get-started/install"> Flutter Get Started</a>, and follow setup instructions.
+			</br>
+			Android Studio or VSCode can be used to edit the code.
+
+		</p>
+
+		<hr>
+
+		<h3 id="connect-app-to-website"><strong>Connect App to your website</strong></h3>
+		<p>
+			After downloading the sdk, its time to connect the app to your website.<br/>
+			Unzip houzi-xxx.zip from flutter-app folder and open the app code folder in your preferred IDE.
+			<br>
+			There're two ways to connect to your website.<br>
+			
+			<h3 id="connect-app-to-website-houzi-builder">Connect website by editing config.json</h3>
+			Open the <code>Project_HOME > assests > configuration > configuration.json</code> file, and look for <code>wordpress_url_domain</code> and Replace with your own domain and scheme.
+<pre>
+//Mandatory
+"wordpress_url_scheme": "https",
+"wordpress_url_domain": "domain.com",
+"wordpress_url_path": "",
+</pre>
+if your website URL does not contain a subpath then leave <code>wordpress_url_path</code> as it is.
+		</p>
+		<h3 id="connect-app-to-website-houzi-builder">Connect website using Houzi Builder</h3>
+			<p>You can use Houzi Builder to configure your app.
+			<br>Please follow these steps for the quick setup of your Mobile app.</p>
+			<ol>
+				<li>Open the <code >Houzi Builder</code> application.</li>
+				<li>Provide <code >App Name</code> in the required field.</li>
+				<li>
+					<p>Provide <code >Wordpress URL</code> in the required field.</p>
+
+					<blockquote>
+					<p><strong>Note</strong>: To provide Wordpress URL, just click on <code >Wordpress URL Text Field</code>. A dialog will open. Provide the <code >Wordpress URL Scheme</code>, <code >Wordpress URL Domain</code> and <code >Wordpress URL Path</code> in their respective fields.<br />
+				If your website URL does not contain a subpath then leave <code >Wordpress URL Path</code> field as it is.</p>
+					</blockquote>
+					<img src="assets/images/add-url-screenshot.png" alt="HTML Structure" />
+				<pre>Example 1 (Website Url with path):
+Url: https://domain.com/path/
+Wordpress URL Scheme = https
+Wordpress URL Domain = domain.com
+			</pre>
+			</li>
+			<li>Provide other URLs.</li>
+			<li>Export and copy the text and replace all text in following file: the <code >Project_HOME &gt; assests &gt; configuration &gt; configuration.json</code> file.</li>
+		</ol>
+
+		<hr>
+		<h3 id="compile-app"><strong>Compile and Run App</strong></h3>
+		<p>
+			After following the minimum required steps to connect to your website, you are now able to compile app to view your app in action.<br/>
+		</p>
+		<h3 id="detailed-documentation"><strong>Detailed Documentation</strong></h3>
+		<p>
+			This is a quick setup guide. We have detailed documentation available at <a href="https://houzi-docs.booleanbites.com/">Houzi-Docs</a>.<br/>
+		</p>
+	</div><!-- end div .container -->
+</body>
+</html>
